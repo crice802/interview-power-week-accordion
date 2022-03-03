@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import StudentIndex from '../studentIndex/studentIndex';
 import './App.css'
 
 
@@ -26,7 +27,10 @@ const App = () => {
   
   return ( 
     <>
-    <h1>Email: {students.email}</h1>
+    <h1>Students:</h1>
+    <StudentIndex 
+      students={students}
+    />
     </>
    );
 }
