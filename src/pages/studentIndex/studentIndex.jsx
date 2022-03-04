@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import StudentCard from '../../componets/StudentCard';
+import React, { useState } from "react";
+import StudentCard from "../../componets/StudentCard";
 
-const StudentIndex = ({students}) => {
-  const [isAllActive, setIsAllActive] = useState(false)
-  return ( 
+const StudentIndex = ({ students }) => {
+  const [isAllActive, setIsAllActive] = useState(false);
+  return (
     <>
-    <button
-    onClick={() => setIsAllActive(!isAllActive)}
-    >Show All</button>
-    {students.map(student => 
-      <StudentCard
-        student={student}
-        key={student.id}
-        isAllActive={isAllActive}
-      />
-      )}
+      <button onClick={() => setIsAllActive(!isAllActive)}>
+        {isAllActive ? "Hide all" : "Show All"}
+      </button>
+      {students.map((student) => (
+        <StudentCard
+          student={student}
+          key={student.id}
+          isAllActive={isAllActive}
+        />
+      ))}
     </>
-   );
-}
- 
+  );
+};
+
 export default StudentIndex;

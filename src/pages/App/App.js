@@ -1,38 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import StudentIndex from '../studentIndex/studentIndex';
-import './App.css'
-
-
+import React, { useState, useEffect } from "react";
+import StudentIndex from "../studentIndex/studentIndex";
+import "./App.css";
 
 const App = () => {
-  const [students, setStudents] = useState('')
-  
+  const [students, setStudents] = useState([]);
+
   useEffect(() => {
-    const url = 'https://api.hatchways.io/assessment/students'
-    const fetchData = async() => {
-      try{
-        const response = await fetch(url)
-        const json = await response.json()
-        console.log(json.students)
-        setStudents(json.students)
-      }catch(error) {
-        console.log('error', error)
+    const url = "https://api.hatchways.io/assessment/students";
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setStudents(json.students);
+      } catch (error) {
+        console.log("error", error);
       }
-    }
+    };
 
-    fetchData()
-  },[])
-  
+    fetchData();
+  }, []);
 
-  
-  return ( 
+  return (
     <>
-    <h1>Students:</h1>
-    <StudentIndex 
-      students={students}
-    />
+      <h1>Students:</h1>
+      <StudentIndex students={students} />
     </>
-   );
-}
- 
+  );
+};
+
 export default App;
