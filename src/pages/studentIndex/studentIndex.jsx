@@ -3,6 +3,7 @@ import StudentCard from "../../componets/StudentCard";
 
 const StudentIndex = ({ students }) => {
   const [isAllActive, setIsAllActive] = useState(false);
+  
   return (
     <>
       <button onClick={() => setIsAllActive(!isAllActive)}>

@@ -5,6 +5,7 @@ import "./App.css";
 const App = () => {
   const [students, setStudents] = useState([]);
 
+  //Api Call
   useEffect(() => {
     const url = "https://api.hatchways.io/assessment/students";
     const fetchData = async () => {

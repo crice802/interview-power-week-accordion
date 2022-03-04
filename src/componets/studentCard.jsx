@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const StudentCard = ({ isAllActive, student }) => {
   const [isActive, setIsActive] = useState(false);
+
   return (
     <div>
       <div key={student.id} className="accordian">
@@ -18,19 +19,15 @@ const StudentCard = ({ isAllActive, student }) => {
         {(isAllActive || isActive) && (
           <div className="accordion-content">
             <div>
-              {" "}
               <strong>Email:</strong> <em>{student.email}</em>
             </div>
             <div>
-              {" "}
               <strong>Company:</strong> <em>{student.company}</em>
             </div>
             <div>
-              {" "}
               <strong>City:</strong> <em>{student.city}</em>
             </div>
             <div>
-              {" "}
               <strong>Skill:</strong> <em>{student.skill}</em>
             </div>
           </div>
