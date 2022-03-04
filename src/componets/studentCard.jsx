@@ -11,9 +11,10 @@ const StudentCard = ({ isAllActive, student }) => {
             className="accordian-title"
             onClick={() => setIsActive(!isActive)}
           >
-            <img width="200px" src={student.pic} alt={student.firstName} />
+            <img width="100px" src={student.pic} alt={student.firstName} />
             {student.firstName} {student.lastName}
           </div>
+          {/* changes text based on if clicked or not and displays adittional accordion info */}
           <div>{isAllActive || isActive ? "-" : "+"}</div>
         </div>
         {(isAllActive || isActive) && (

@@ -8,6 +8,7 @@ const App = () => {
   //Api Call
   useEffect(() => {
     const url = "https://api.hatchways.io/assessment/students";
+    //cant use async directly in useEffect, so declare async function here
     const fetchData = async () => {
       try {
         const response = await fetch(url);
@@ -17,7 +18,7 @@ const App = () => {
         console.log("error", error);
       }
     };
-
+    //call function here this allows us to use async (or decalre function outside useEffect)
     fetchData();
   }, []);
 
